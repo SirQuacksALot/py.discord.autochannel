@@ -4,7 +4,7 @@
 
 Discord Bot to automatically create voice channels on entering a specified voice channel written in python.
 
-> [!WARNING] ⚠️  
+> [!WARNING]
 > Currently work in progess. Please ignore missing parts and just feel take a look around 👀
 
 ## Getting started 🛫
