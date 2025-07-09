@@ -48,17 +48,11 @@ Run the program
 ```bash
 python3 ./main.py
 ```
-
-## Repo Activity 👀
-
-![Alt](https://repobeats.axiom.co/api/embed/bd873357e4eb42b1f9c5ba56f2693b438d5ae1a3.svg "Repobeats analytics image")
-
-
 ## Documentation 📖
 
 - [How to use the Bot](docs/guide.md)
 - [Development documentation](docs/dev/the_plan.md)
 
-## Details 🔎
+## Repo Activity 👀
 
-[![License Details](.github/img/metrics.plugin.licenses.svg)](https://github.com/SirQuacksALot/py.discord.autochannel/blob/stable/LICENSE "The Repo's License")
+![Alt](https://repobeats.axiom.co/api/embed/bd873357e4eb42b1f9c5ba56f2693b438d5ae1a3.svg "Repobeats analytics image")
