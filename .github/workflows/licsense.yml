@@ -1,0 +1,16 @@
+name: Licenses and permissions
+on: 
+  schedule: [{cron: "0 0 * * *"}]
+  workflow_dispatch:
+jobs:
+  github-metrics:   
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: stalomeow/metrics@projects-v2
+        with:
+          filename: .github/img/metrics.plugin.licenses.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repo: py.discord.autochannel
+          plugin_licenses: yes

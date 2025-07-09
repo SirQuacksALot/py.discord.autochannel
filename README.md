@@ -1,2 +1,64 @@
-# py.discord.autochannel
+## `Discord`.`Autochannel`.`Bot`
+[![Tag](https://img.shields.io/github/v/tag/SirQuacksALot/py.discord.autochannel?style=flat-square)](https://github.com/SirQuacksALot/py.discord.autochannel/releases "Latest Tag") [![License](https://img.shields.io/github/license/SirQuacksAlot/py.discord.autochannel?style=flat-square)](https://github.com/SirQuacksALot/py.discord.autochannel/blob/stable/LICENSE "The Repo's License") [![CodeFactor](https://www.codefactor.io/repository/github/sirquacksalot/py.discord.autochannel/badge?style=flat-square)](https://www.codefactor.io/repository/github/sirquacksalot/py.discord.autochannel "Code Quality")
+
+
 Discord Bot to automatically create voice channels on entering a specified voice channel written in python.
+
+> [!WARNING] ⚠️  
+> Currently work in progess. Please ignore missing parts and just feel take a look around 👀
+
+## Getting started 🛫
+
+### Dependencies
+
+1. Bot token - *Have a discord bot setuped in the development portal and your server*
+2. Python3 installed - *Only for direct running the programm*
+
+### Docker deployment
+
+Deploy single container with docker
+
+```bash
+
+```
+
+Deploy with Docker compose in a stack
+
+```bash
+
+```
+
+### Direct running the program
+
+Clone the repo
+
+```bash
+git clone git@github.com:SirQuacksALot/py.discord.autochannel.git
+```
+
+Create a .env file by copying the `example.env`
+```bash
+cp example.env .env
+```
+
+Change the bot `TOKEN` in the newly created .env to your token.
+
+Run the program
+
+```bash
+python3 ./main.py
+```
+
+## Repo Activity 👀
+
+![Alt](https://repobeats.axiom.co/api/embed/bd873357e4eb42b1f9c5ba56f2693b438d5ae1a3.svg "Repobeats analytics image")
+
+
+## Documentation 📖
+
+- [How to use the Bot](docs/guide.md)
+- [Development documentation](docs/dev/the_plan.md)
+
+## Details 🔎
+
+[![License Details](.github/img/metrics.plugin.licenses.svg)](https://github.com/SirQuacksALot/py.discord.autochannel/blob/stable/LICENSE "The Repo's License")
