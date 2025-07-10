@@ -1,0 +1,39 @@
+name: Publish
+
+on:
+  workflow_call:
+    inputs:
+      release_tag:
+        required: true
+        type: string
+
+permissions:
+    contents: write
+    packages: write
+    actions: write
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout Repository
+          uses: actions/checkout@v4
+          with:
+            ref: ${{ inputs.release_tag }}
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+        - name: Log in to GitHub Container Registry
+          run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
+
+        - name: Set lowercase username
+          run: echo "GHCR_USERNAME=${GITHUB_ACTOR,,}" >> $GITHUB_ENV
+
+        - name: Build Docker Image
+          run: docker build -t ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:${{ inputs.release_tag }}  -t ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:latest -f docker/fassade/Dockerfile .
+
+        - name: Push Docker Image
+          run: | 
+            docker push ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:${{ inputs.release_tag }}
+            docker push ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:latest
+          
