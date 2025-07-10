@@ -11,7 +11,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Restlichen Code kopieren
 COPY app/ ./app
 
-ENV DISCORD_TOKEN=your_token_here
-
 # Startbefehl
 CMD ["python", "app/main.py"]
