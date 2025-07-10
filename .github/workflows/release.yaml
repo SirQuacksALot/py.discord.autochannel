@@ -1,0 +1,37 @@
+name: Release
+description: Create a new release on tag creation with format; v.*.*.*
+
+on: 
+  push:
+    tags: v*.*.*
+
+permissions:
+  contents: write
+  packages: write
+  actions: write
+
+jobs: 
+  create-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Debug Token Permissions
+        run: |
+            curl -H "Authorization: token $GITHUB_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/${{ github.repository }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Create release
+        uses: softprops/action-gh-release@v2
+        with:
+          generate_release_notes: true
+          tag_name: ${{ github.ref_name }}
+          make_latest: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  publish:
+    if: 
+    needs: create-release
+    uses: ./.github/workflows/package.yaml
+    with:
+      release_tag: ${{ github.ref_name }}
