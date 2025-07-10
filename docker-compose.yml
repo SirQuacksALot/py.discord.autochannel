@@ -1,0 +1,16 @@
+---
+services:
+  bot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hsmw-mobil-heimdall
+    environment: 
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
+    volumes:
+      - "db:/bot/app/database"
+      - "commands:/bot/app/commands"
+
+volumes:
+  db:
+  commands:
