@@ -1,9 +1,8 @@
 name: Release
-description: Create a new release on tag creation with format; v.*.*.*
 
 on: 
   push:
-    tags: v*.*.*
+    tags: [ v*.*.* ]
 
 permissions:
   contents: write
@@ -30,7 +29,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   publish:
-    if: 
     needs: create-release
     uses: ./.github/workflows/package.yaml
     with:
