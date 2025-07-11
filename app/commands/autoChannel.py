@@ -60,8 +60,8 @@ class AutoChannelManager(commands.Cog):
             traceback.print_exc()
             try:
                 await interaction.followup.send("❌ Es ist ein Fehler aufgetreten beim Entfernen.", ephemeral=True)
-            except:
-                pass
+            except Exception as e:
+                print("Unknown exception occurred in add_channel_listener")
     
     @app_commands.command(name="remove_channel_listener", description="Entfernt einen gespeicherten Join-Voice-Channel.")
     @app_commands.describe(channel="Der Channel, der entfernt werden soll")
@@ -87,8 +87,8 @@ class AutoChannelManager(commands.Cog):
             traceback.print_exc()
             try:
                 await interaction.response.send_message("❌ Es ist ein Fehler aufgetreten beim Entfernen.", ephemeral=True)
-            except:
-                pass
+            except Exception as e:
+                print("Unknown exception occurred in remove_channel_listener")
 
     """
     |
