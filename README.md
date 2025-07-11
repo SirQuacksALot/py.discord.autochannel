@@ -19,13 +19,25 @@ Discord Bot to automatically create voice channels on entering a specified voice
 Deploy single container with docker
 
 ```bash
-
+docker run -e DISCORD_TOKEN=yourTokenHere ghcr.io/sirquacksalot/heimdalldbot:latest
 ```
 
 Deploy with Docker compose in a stack
 
 ```bash
+services:
+  bot:
+    image: ghcr.io/sirquacksalot/heimdalldbot:latest
+    container_name: heimdall-bot
+    environment: 
+      - DISCORD_TOKEN=${DISCORD_TOKEN} # use the .env file
+    volumes:
+      - "db:/bot/app/database"
+      - "commands:/bot/app/commands"
 
+volumes:
+  db:
+  commands:
 ```
 
 ### Direct running the program
