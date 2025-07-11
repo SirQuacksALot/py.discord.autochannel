@@ -26,11 +26,17 @@ jobs:
         - name: Log in to GitHub Container Registry
           run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u $GITHUB_ACTOR --password-stdin
 
+        - name: Set up QEMU
+          uses: docker/setup-qemu-action@v3
+
+        - name: Set up Docker Buildx
+          uses: docker/setup-buildx-action@v3
+
         - name: Set lowercase username
           run: echo "GHCR_USERNAME=${GITHUB_ACTOR,,}" >> $GITHUB_ENV
 
         - name: Build Docker Image
-          run: docker build --no-cache -t ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:${{ inputs.release_tag }}  -t ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:latest -f Dockerfile .
+          run: docker build --platform linux/amd64,linux/arm64 --no-cache -t ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:${{ inputs.release_tag }}  -t ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:latest -f Dockerfile .
 
         - name: Push Docker Image
           run: | 
