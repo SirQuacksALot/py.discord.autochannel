@@ -7,7 +7,7 @@ from pathlib import Path
 
 intents = discord.Intents.default()
 bot = commands.Bot(command_prefix='!', intents=intents)
-commands_dir = Path(__file__).resolve().parent / 'commands'
+commands_dir = Path(__file__).resolve().parent.parent / 'commands'
 
 root_dir = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(root_dir))
@@ -29,7 +29,7 @@ async def main():
     try:
         async with bot:
             await load_extensions()
-            await bot.start(os.getenv("DISCORD_TOKEN"))
+            await bot.start(os.getenv("DISCORD_TOKEN", ""))
     except KeyboardInterrupt:
         print("\n🛑 Beende Bot sauber...")
 
