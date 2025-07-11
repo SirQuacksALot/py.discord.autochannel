@@ -4,7 +4,7 @@ import traceback
 from discord import app_commands
 from discord.ext import commands
 
-DB_PATH = "/bot/app/channels.db"
+DB_PATH = "app/channels.db"
 
 class AutoChannelManager(commands.Cog):
 
