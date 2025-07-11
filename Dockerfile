@@ -2,7 +2,7 @@
 FROM python:3.13.5-slim
 
 # Update pip to newest version
-RUN pip install --upgrade pip
+RUN pip install --no-cache-dir --upgrade pip
 
 # Arbeitsverzeichnis im Container
 RUN adduser --disabled-login bot
