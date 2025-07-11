@@ -1,4 +1,4 @@
-## `Discord`.`Autochannel`.`Bot`
+## `Discord`.`Autochannel`.`Bot` | `Project` `Heimdall`
 [![Tag](https://img.shields.io/github/v/tag/SirQuacksALot/py.discord.autochannel?style=flat-square)](https://github.com/SirQuacksALot/py.discord.autochannel/releases "Latest Tag") [![License](https://img.shields.io/github/license/SirQuacksAlot/py.discord.autochannel?style=flat-square)](https://github.com/SirQuacksALot/py.discord.autochannel/blob/stable/LICENSE "The Repo's License") [![CodeFactor](https://www.codefactor.io/repository/github/sirquacksalot/py.discord.autochannel/badge?style=flat-square)](https://www.codefactor.io/repository/github/sirquacksalot/py.discord.autochannel "Code Quality") [![Release](https://img.shields.io/github/actions/workflow/status/SirQuacksALot/py.discord.autochannel/release.yaml?style=flat-square)](https://github.com/SirQuacksALot/py.discord.autochannel/actions/workflows/release.yaml)
 
 
