@@ -30,7 +30,7 @@ jobs:
           run: echo "GHCR_USERNAME=${GITHUB_ACTOR,,}" >> $GITHUB_ENV
 
         - name: Build Docker Image
-          run: docker build -t ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:${{ inputs.release_tag }}  -t ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:latest -f Dockerfile .
+          run: docker build --no-cache -t ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:${{ inputs.release_tag }}  -t ghcr.io/${{ env.GHCR_USERNAME }}/heimdalldbot:latest -f Dockerfile .
 
         - name: Push Docker Image
           run: | 
