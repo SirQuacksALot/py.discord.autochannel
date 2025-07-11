@@ -1,0 +1,4 @@
+[submodule "commands"]
+	path = commands
+	url = https://github.com/SirQuacksALot/py.heimdall.commands.collection
+	branch = master
