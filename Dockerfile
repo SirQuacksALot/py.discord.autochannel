@@ -17,7 +17,7 @@ ENV PATH="/home/bot/.local/bin:${PATH}"
 
 # Restlichen Code kopieren
 COPY --chown=bot:bot app/ ./app
-COPY --chown=bot:bot data/ ./data
+RUN mkdir data
 COPY --chown=bot:bot commands/ ./commands
 
 LABEL maintainer="SirQuacksAlot <sglass@hs-mittweida.de>"
