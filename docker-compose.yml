@@ -8,9 +8,9 @@ services:
     environment: 
       - DISCORD_TOKEN=${DISCORD_TOKEN}
     volumes:
-      - "db:/bot/app/database"
-      - "commands:/bot/app/commands"
+      - "data:/home/bot/workdir/data:rw"
+      - "commands:/home/bot/workdir/app/commands:rw"
 
 volumes:
-  db:
+  data:
   commands:
