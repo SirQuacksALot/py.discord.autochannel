@@ -9,7 +9,7 @@ services:
       - DISCORD_TOKEN=${DISCORD_TOKEN}
     volumes:
       - "data:/home/bot/workdir/data:rw"
-      - "commands:/home/bot/workdir/app/commands:rw"
+      - "commands:/home/bot/workdir/commands:rw"
 
 volumes:
   data:
