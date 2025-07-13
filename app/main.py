@@ -5,17 +5,11 @@ import asyncio
 from discord.ext import commands
 from pathlib import Path
 
-print("Started Programm...")
-
-
 intents = discord.Intents.default()
 # intents = discord.Intents.all()
 intents.members = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 commands_dir = Path(__file__).resolve().parent.parent / 'commands'
-
-print(f"Mitgegbene Intents: Members {intents.members}, Voice {intents.voice_states}")
-print(f"Bot Intents: Members {bot.intents.members}, Voice {bot.intents.voice_states}")
 
 root_dir = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(root_dir))
