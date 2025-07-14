@@ -5,9 +5,6 @@ Ever wanted a discord bot that could do everything you wanted but it just can do
 
 Project Heimdall makes use of the `discord.py` library to dynamically load command manager scripts and have future proof and strechable solution for a discord bot.
 
-> [!WARNING]
-> Currently work in progess. Please ignore missing parts and just feel free take a look around 👀
-
 ## Getting started 🛫
 
 ### Dependencies
