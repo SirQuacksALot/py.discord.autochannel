@@ -20,7 +20,7 @@ Project Heimdall makes use of the `discord.py` library to dynamically load comma
 Deploy single container with docker
 
 ```bash
-docker run -e DISCORD_TOKEN=yourTokenHere ghcr.io/sirquacksalot/heimdalldbot:latest
+docker run -e DISCORD_TOKEN=yourTokenHere -v data:/home/bot/workdir/data:rw -v commands:/home/bot/workdir/commands:rw ghcr.io/sirquacksalot/heimdalldbot:latest
 ```
 
 Deploy with Docker compose in a stack
@@ -28,16 +28,18 @@ Deploy with Docker compose in a stack
 ```bash
 services:
   bot:
-    image: ghcr.io/sirquacksalot/heimdalldbot:latest
-    container_name: heimdall-bot
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hsmw-mobil-heimdall
     environment: 
-      - DISCORD_TOKEN=${DISCORD_TOKEN} # use the .env file
+      - DISCORD_TOKEN=${DISCORD_TOKEN}
     volumes:
-      - "db:/bot/app/database"
-      - "commands:/bot/app/commands"
+      - "data:/home/bot/workdir/data:rw"
+      - "commands:/home/bot/workdir/commands:rw"
 
 volumes:
-  db:
+  data:
   commands:
 ```
 
