@@ -1,8 +1,9 @@
 ## `Discord`.`Commands`.`Bot` | `Project` `Heimdall`
 [![Tag](https://img.shields.io/github/v/tag/SirQuacksALot/py.discord.autochannel?style=flat-square)](https://github.com/SirQuacksALot/py.discord.autochannel/releases "Latest Tag") [![License](https://img.shields.io/github/license/SirQuacksAlot/py.discord.autochannel?style=flat-square)](https://github.com/SirQuacksALot/py.discord.autochannel/blob/stable/LICENSE "The Repo's License") [![CodeFactor](https://www.codefactor.io/repository/github/sirquacksalot/py.discord.command.bot/badge?style=flat-square)](https://www.codefactor.io/repository/github/sirquacksalot/py.discord.command.bot "Code Quality") [![Release](https://img.shields.io/github/actions/workflow/status/SirQuacksALot/py.discord.autochannel/release.yaml?style=flat-square)](https://github.com/SirQuacksALot/py.discord.autochannel/actions/workflows/release.yaml)
 
+Ever wanted a discord bot that could do everything you wanted but it just can do what it is made for and nothing more ?
 
-Discord Bot to automatically create voice channels on entering a specified voice channel written in python.
+Project Heimdall makes use of the `discord.py` library to dynamically load command manager scripts and have future proof and strechable solution for a discord bot.
 
 > [!WARNING]
 > Currently work in progess. Please ignore missing parts and just feel free take a look around 👀
